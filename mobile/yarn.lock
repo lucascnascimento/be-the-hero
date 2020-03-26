@@ -3331,6 +3331,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-mail-composer@npm:~8.0.0":
+  version: 8.0.0
+  resolution: "expo-mail-composer@npm:8.0.0"
+  dependencies:
+    query-string: ^6.2.0
+  checksum: eb25618e2d2d0da56af638c8540edb38886fd420df564b1ef562a44df56d9ab836aa22ab8310cca0096ae90c0ac4095fa1e73dc8039de09c8c97c6a7b1df8846
+  languageName: node
+  linkType: hard
+
 "expo-permissions@npm:~8.0.0":
   version: 8.0.0
   resolution: "expo-permissions@npm:8.0.0"
@@ -6196,7 +6205,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"query-string@npm:^6.11.1":
+"query-string@npm:^6.11.1, query-string@npm:^6.2.0":
   version: 6.11.1
   resolution: "query-string@npm:6.11.1"
   dependencies:
@@ -6681,6 +6690,7 @@ fsevents@^1.2.7:
     babel-preset-expo: ~8.0.0
     expo: ~36.0.0
     expo-constants: ~8.0.0
+    expo-mail-composer: ~8.0.0
     react: ~16.9.0
     react-dom: ~16.9.0
     react-native: "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz"
