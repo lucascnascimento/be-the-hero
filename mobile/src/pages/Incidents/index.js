@@ -11,12 +11,14 @@ import styles from "./styles";
 
 export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
+  const [total, setTotal] = useState(0);
   const navigation = useNavigation();
 
   async function loadIncidents() {
     const response = await api.get("incidents");
 
     setIncidents(response.data);
+    setTotal(response.headers["x-total-count"]);
   }
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function Incidents() {
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
-          Total de <Text style={styles.headerTextBold}>0 casos</Text>.
+          Total de <Text style={styles.headerTextBold}>{total} casos</Text>.
         </Text>
       </View>
 
@@ -56,7 +58,12 @@ export default function Incidents() {
               <Text style={styles.incidentValue}>{incident.title}</Text>
 
               <Text style={styles.incidentProperty}>Valor</Text>
-              <Text style={styles.incidentValue}>{incident.value}</Text>
+              <Text style={styles.incidentValue}>
+                {Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL"
+                }).format(incident.value)}
+              </Text>
 
               <TouchableOpacity
                 style={styles.detailsButton}
